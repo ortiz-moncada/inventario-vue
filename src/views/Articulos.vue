@@ -41,7 +41,7 @@ columns.value = [
 async function listarArticulos() {
     let res = await getData("/articulos/articulo")
     console.log(res);
-    rows.value = res.articulos
+    rows.value = res
 }
 //hola
 </script>
