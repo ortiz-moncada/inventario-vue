@@ -1,96 +1,49 @@
 <template>
-    <div>
-        <q-table title="Terceros" :rows="rows" :columns="columns" row-key="name">
+    <h1>Articulos</h1>
+    <div class="q-pa-md">
+        <q-table title="Treats" :rows="rows" :columns="columns" row-key="name" >
 
+            <template v-slot:body-cell-opciones="props">
+                <q-td :props="props" style="text-align: center;">
+                    <q-btn>📝</q-btn>
+                   
+                    <q-btn v-if="props.row.estado=='activo'">❌</q-btn>
+                    <q-btn v-else=>✅</q-btn>
+                </q-td>
+            </template>
         </q-table>
     </div>
+
 
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { getData } from '../services/apiClient.js'
+
+import { onBeforeMount, ref } from 'vue';
+import { postData, putData, getData } from '../services/apiClient';
+let rows = ref([])
+let columns = ref([])
 
 
-const columns = ref([
-    {
-        name: "nombre",
-        align: "center",
-        label: "Nombre",
-        field: "nombre",
-        sortable: true,
-    },
-    {
-        name: "identificacion",
-        align: "center",
-        label: "Identificacion",
-        field: "identificacion",
-        sortable: true,
-    },
-    {
-        name: "direccion",
-        align: "center",
-        label: "Direccion",
-        field: "direccion",
-        sortable: true,
-    },
-    {
-        name: "telefono",
-        align: "center",
-        label: "Telefono",
-        field: "telefono",
-        sortable: true,
-    },
-    {
-        name: "email",
-        align: "center",
-        label: "Email",
-        field: "email",
-        sortable: true,
-    },
-    {
-        name: "tipo",
-        align: "center",
-        label: "Tipo",
-        field: "tipo",
-        sortable: true,
-    },
-    {
-        name: "estado",
-        align: "center",
-        label: "Estado",
-        field: "estado",
-        sortable: true,
-    },
-    
-])
-
-const rows = ref([])
-
-async function getDataFromApi() {
-    const token = localStorage.getItem('token');  // Obtener el token del localStorage
-    if (!token) {
-        console.log('Token no encontrado');
-        return;  // Salir si el token no está disponible
-    }
-
-    try {
-        const response = await getData('terceros');  // Llamada a la API
-        console.log(response);  // Verifica toda la respuesta en consola
-        if (response && Array.isArray(response)) {
-            rows.value = response;  // Asigna el arreglo de objetos a rows
-        } else {
-            console.log('La respuesta no contiene los datos esperados');
-        }
-    } catch (error) {
-        console.log('Error al obtener los datos:', error.response ? error.response.data : error);
-    }
-}
-
-
-
-onMounted(async () => {
-    await getDataFromApi()
+onBeforeMount(() => {
+    listarTerceros()
 })
 
+columns.value = [
+    { field: "nombre", label: "nombre", name: "nombre", align: "center" },
+    { field: "identificacion", label: "identificacion", name: "identificacion", align: "center" },
+    { field: "tipo", label: "tipo", name: "tipo", align: "center" },
+    { field: "email", label: "email", name: "email", align: "center" },
+    { field: "direccion", label: "dirrecion", name: "dirrecion", align: "center" },
+    { field: "telefono", label: "telefono", name: "telefono", align: "center" },
+    { field: "estado", label: "estado", name: "estado", align: "center" },
+]
+
+
+async function listarTerceros() {
+    let res = await getData("/terceros")
+    console.log(res);
+    rows.value = res
+}
+//hola
 </script>
