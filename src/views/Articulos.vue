@@ -9,7 +9,7 @@
                     <q-btn>📝</q-btn>
                    
                     <q-btn v-if="props.row.estado=='activo'">❌</q-btn>
-                    <q-btn v-else="props.row.estado=='inactivo'">✅</q-btn>
+                    <q-btn v-else>✅</q-btn>
                 </q-td>
             </template>
         </q-table>
