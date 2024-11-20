@@ -12,11 +12,6 @@
                     <q-btn v-else="props.row.estado=='inactivo'">✅</q-btn>
                 </q-td>
             </template>
-            <!-- <template v-slot:body-cell-estado>
-                <q-td :props="props">
-                    
-                </q-td>
-            </template> -->
         </q-table>
     </div>
 
