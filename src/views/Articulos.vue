@@ -15,6 +15,7 @@
         </q-table>
     </div>
 
+    <!-- Este es un comentario de prueva -->
 
 </template>
 
