@@ -9,7 +9,7 @@
                     <q-btn>📝</q-btn>
                    
                     <q-btn v-if="props.row.estado=='activo'">❌</q-btn>
-                    <q-btn v-else>✅</q-btn>
+                    <q-btn v-else="props.row.estado=='inactivo'">✅</q-btn>
                 </q-td>
             </template>
             <!-- <template v-slot:body-cell-estado>
@@ -27,6 +27,7 @@
 
 import { onBeforeMount, ref } from 'vue';
 import { postData, putData, getData } from '../services/apiClient';
+
 let rows = ref([])
 let columns = ref([])
 
