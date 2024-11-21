@@ -57,7 +57,7 @@
     </div>
   </template>
   
-  <script setup>
+<script setup>
   import { onBeforeMount, ref } from 'vue';
   import { getData, postData, putData } from '../services/apiClient';
   
@@ -157,5 +157,5 @@
       console.log('Error al actualizar el estado:', error.response ? error.response.data : error);
     }
   };
-  </script>
+</script>
   
