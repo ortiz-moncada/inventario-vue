@@ -1,6 +1,6 @@
 <template>
 
-    <h1>Articulos</h1>
+    <h1>movimientos</h1>
     <div class="q-pa-md">
         <q-table title="Treats" :rows="rows" :columns="columns" row-key="name" >
 

@@ -5,7 +5,7 @@
       v-for="filter in backdropFilterList"
       :key="filter.label"
       color="primary"
-      :label="filter.label"
+      :label="'Agregar nueva categoría'"
       no-caps
       @click="openModal(filter)"
     />
@@ -20,7 +20,7 @@
  
         <q-card-actions>
           <q-btn label="Cancelar" color="secondary" flat @click="cerrarFormulario" />
-          <q-btn label="Guardar" color="primary" flat @click="postCategoria" />
+          <q-btn label="Guardar" color="blue" flat @click="postCategoria" /> 
         </q-card-actions>
       </q-card>
     </q-dialog>
@@ -228,4 +228,22 @@ const guardarEdicion = async () => {
     console.log('Error al actualizar la categoría:', error.response ? error.response.data : error);
   }
 };
+
 </script>
+
+<style>
+h1 {
+  color: #1E90FF; 
+  font-size: 3rem; 
+  font-weight: bold; 
+  text-align: center; 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 20px 0; 
+}
+.q-btn {
+  color: inherit; /* Asegúrate de que el texto sea visible */
+  font-weight: bold; /* Para hacerlo más visible */
+}
+</style>
