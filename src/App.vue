@@ -31,9 +31,9 @@
             <q-item-label>Categorias</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable to="/terceros">
+        <q-item clickable to="/clientes">
           <q-item-section>
-            <q-item-label>Terceros</q-item-label>
+            <q-item-label>Clientes</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
