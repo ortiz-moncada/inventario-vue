@@ -7,7 +7,7 @@
         </div>
     
         <div class="img-login">
-            <img src="https://cdn-icons-png.flaticon.com/128/10112/10112441.png" alt="" class="logo">
+            <img src="https://img.freepik.com/iconos-gratis/carrito-compras_318-839174.jpg" alt="" class="logo">
        
         </div>
          <h6>Iniciar Sesión</h6>
@@ -71,7 +71,7 @@
       
       if (token) {
         Store.setToken(response.token)
-        router.replace("/articulos")
+        router.replace("/app")
       } else {
         console.log('Respuesta sin token:', response);
       }
@@ -111,7 +111,7 @@
     justify-content: center;
     align-items: center;
     height: 100px;
-    background-color: rgb(2, 21, 38);
+    background-color: blue;
     font-size: 40px;
     color: white;
     border-radius: 12px 12px 0 0;
@@ -158,14 +158,12 @@
     display: flex;
     
     margin: 30px 30px 10px;
-    background-color: rgb(2, 21, 38);
+    background-color: blue;
     color: white;
     font-weight: 600;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
  
-    
-
-   
+  
   }
   #buttom{
     display: flex;
