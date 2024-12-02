@@ -48,7 +48,7 @@
         <q-input v-model="articuloEditado.nombre" label="Nombre" filled />
         <q-input v-model="articuloEditado.precio" label="Precio" type="number" filled />
         <q-input v-model="articuloEditado.stock" label="Stock" type="number" filled />
-        <q-input v-model="articuloEditado.categoria.descripcion" label="Categoría" filled />
+        <q-input v-model="articuloEditado.categoria" label="Categoría" filled />
       </q-card-section>
 
       <q-card-actions align="around">
