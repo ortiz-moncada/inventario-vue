@@ -1,11 +1,10 @@
 import Articulos from '../views/Articulos.vue'
 import Categorias from '../views/Categorias.vue'
 import Movimientos from '../views/Movimientos.vue'
-import Terceros from '../views/Terceros.vue'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
-
 import { createRouter, createWebHistory } from 'vue-router'
+import Clientes from '../views/Clientes.vue'
 
 const routes = [
     {
@@ -30,8 +29,8 @@ const routes = [
             component: Movimientos
         },
         {
-            path: '/terceros',
-            component: Terceros
+            path: '/clientes',
+            component: Clientes
         }
     ]
    },
