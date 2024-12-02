@@ -1,4 +1,5 @@
 <template>
+   <!-- para ver los cambios -->
   <h1>Categorías</h1>
   <div class="q-pa-md q-gutter-sm">
     <q-btn
