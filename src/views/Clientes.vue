@@ -5,7 +5,7 @@
       v-for="filter in backdropFilterList"
       :key="filter.label"
       color="primary"
-      :label="filter.label"
+      :label="'Agregar un nuevo cliente'"
       no-caps
       @click="openModal(filter)"
     />

@@ -1,6 +1,8 @@
 import Articulos from '../views/Articulos.vue'
 import Categorias from '../views/Categorias.vue'
 import Movimientos from '../views/Movimientos.vue'
+import provedores from '../views/provedores.vue'
+import usuarios from '../views/usuarios.vue'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import { createRouter, createWebHistory } from 'vue-router'
@@ -31,6 +33,14 @@ const routes = [
         {
             path: '/clientes',
             component: Clientes
+        },
+        {
+            path: '/proveedores',
+            component: provedores
+        },
+        {
+            path: '/usuarios',
+            component: usuarios
         }
     ]
    },

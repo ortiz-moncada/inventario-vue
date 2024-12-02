@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h1>provedores</h1>
+        <h1>usuarios</h1>
     </div>
 </template>
