@@ -5,6 +5,10 @@ import provedores from '../views/provedores.vue'
 import usuarios from '../views/usuarios.vue'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
+import compras from '../views/compras.vue'
+import ventas from '../views/ventas.vue'
+import devolucionesE from '../views/devoluciones-e.vue'
+import devolucionesS from '../views/devoluciones-s.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import Clientes from '../views/Clientes.vue'
 
@@ -41,7 +45,23 @@ const routes = [
         {
             path: '/usuarios',
             component: usuarios
-        }
+        },
+        {
+            path: '/compras',
+            component: compras
+        },
+        {
+            path: '/ventas',
+            component: ventas
+        },
+        {
+            path: '/devoluciones-entrada',
+            component: devolucionesE
+        },
+        {
+            path: '/devoluciones-salida',
+            component: devolucionesS
+        },
     ]
    },
    
