@@ -221,7 +221,7 @@ const guardarEdicion = async () => {
   
   <style>
   h1 {
-    color: #1E90FF; 
+    color: red; 
     font-size: 3rem; 
     font-weight: bold; 
     text-align: center; 

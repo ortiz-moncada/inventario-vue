@@ -4,7 +4,7 @@
     <q-btn
       v-for="filter in backdropFilterList"
       :key="filter.label"
-      color="primary"
+      color="red"
       :label="'Agregar un nuevo cliente'"
       no-caps
       @click="openModal(filter)"

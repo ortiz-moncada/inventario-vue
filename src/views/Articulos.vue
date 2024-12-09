@@ -3,7 +3,7 @@
   <div class="q-pa-md q-gutter-sm">
     <!-- Botón para agregar un nuevo artículo -->
     <q-btn
-      color="primary"
+      color="red"
       label="Agregar nuevo artículo"
       no-caps
       @click="openModal"

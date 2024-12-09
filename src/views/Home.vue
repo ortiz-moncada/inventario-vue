@@ -1,133 +1,154 @@
 <template>
   <q-layout view="hhh LpR fFf">
-<q-header 
+    <q-header 
   id="header-main" 
-  class="position-fixed"
+  class="header-enhanced position-fixed"
   v-show="$route.name !== 'Login'"
 >
   <q-toolbar>
-    <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+    <q-btn 
+      dense 
+      flat 
+      round 
+      icon="menu" 
+      class="btn-highlight" 
+      @click="toggleLeftDrawer" 
+      color="white"
+    />
     <q-toolbar-title class="text-center">
-      <!-- Título si es necesario -->
+      <span class="toolbar-title"></span>
     </q-toolbar-title>
   </q-toolbar>
 </q-header>
-  
-    <q-drawer v-model="leftDrawerOpen" side="left" behavior="mobile" bordered>
-      <img src="https://img.freepik.com/iconos-gratis/carrito-compras_318-839174.jpg" alt="Logo" />
-      <q-list>
-        <!-- Página Principal -->
-        <q-item clickable to="/home">
-          <q-item-section avatar>
-            <q-icon name="home" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="text-blue q-ml-sm">Página Principal</q-item-label> <!-- Color azul y margen a la izquierda -->
-          </q-item-section>
-        </q-item>
 
-        <!-- Clientes -->
-        <q-item clickable to="/clientes">
-          <q-item-section avatar>
-            <q-icon name="group" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="text-blue q-ml-sm">Clientes</q-item-label>
-          </q-item-section>
-        </q-item>
+<q-drawer 
+  v-model="leftDrawerOpen" 
+  side="left" 
+  behavior="mobile" 
+  bordered 
+  class="drawer-enhanced" 
+  transition-show="slideInLeft" 
+  transition-hide="slideOutLeft"
+>
+  <img 
+    src="https://thumbs.dreamstime.com/b/market-logo-shopping-simple-logo-template-vector-illustration-icon-market-logo-shopping-simple-logo-template-vector-illustration-229445284.jpg" 
+    alt="Logo" 
+    class="logo-drawer"
+  />
+  <q-list>
+    <!-- Página Principal -->
+    <q-item clickable to="/home" class="item-highlight">
+      <q-item-section avatar>
+        <q-icon name="home" class="icon-highlight" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label class="q-ml-sm">Página Principal</q-item-label>
+      </q-item-section>
+    </q-item>
 
-        <!-- Proveedores -->
-        <q-item clickable to="/proveedores">
-          <q-item-section avatar>
-            <q-icon name="store" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="text-blue q-ml-sm">Proveedores</q-item-label>
-          </q-item-section>
-        </q-item>
+    <!-- Clientes -->
+    <q-item clickable to="/clientes" class="item-highlight">
+      <q-item-section avatar>
+        <q-icon name="group" class="icon-highlight" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label class="q-ml-sm">Clientes</q-item-label>
+      </q-item-section>
+    </q-item>
 
-        <!-- Movimientos -->
-        <q-item clickable to="/movimientos">
-          <q-item-section avatar>
-            <q-icon name="swap_horiz" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="text-blue q-ml-sm">Movimientos</q-item-label>
-          </q-item-section>
-        </q-item>
+    <!-- Proveedores -->
+    <q-item clickable to="/proveedores" class="item-highlight">
+      <q-item-section avatar>
+        <q-icon name="store" class="icon-highlight" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label class="q-ml-sm">Proveedores</q-item-label>
+      </q-item-section>
+    </q-item>
 
-        <!-- Artículos -->
-        <q-item clickable to="/articulos">
-          <q-item-section avatar>
-            <q-icon name="shopping_cart" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="text-blue q-ml-sm">Artículos</q-item-label>
-          </q-item-section>
-        </q-item>
+    <!-- Movimientos -->
+    <q-item clickable to="/movimientos" class="item-highlight">
+      <q-item-section avatar>
+        <q-icon name="swap_horiz" class="icon-highlight" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label class="q-ml-sm">Movimientos</q-item-label>
+      </q-item-section>
+    </q-item>
 
-        <!-- Categorías -->
-        <q-item clickable to="/categorias">
-          <q-item-section avatar>
-            <q-icon name="category" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="text-blue q-ml-sm">Categorías</q-item-label>
-          </q-item-section>
-        </q-item>
+    <!-- Artículos -->
+    <q-item clickable to="/articulos" class="item-highlight">
+      <q-item-section avatar>
+        <q-icon name="shopping_cart" class="icon-highlight" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label class="q-ml-sm">Artículos</q-item-label>
+      </q-item-section>
+    </q-item>
 
-        <!-- Usuarios (Nuevo) -->
-        <q-item clickable to="/usuarios">
-          <q-item-section avatar>
-            <q-icon name="person" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="text-blue q-ml-sm">Usuarios</q-item-label>
-          </q-item-section>
-        </q-item>
+    <!-- Categorías -->
+    <q-item clickable to="/categorias" class="item-highlight">
+      <q-item-section avatar>
+        <q-icon name="category" class="icon-highlight" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label class="q-ml-sm">Categorías</q-item-label>
+      </q-item-section>
+    </q-item>
 
-        <!-- Compras (Nuevo) -->
-        <q-item clickable to="/compras">
-          <q-item-section avatar>
-            <q-icon name="credit_card" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="text-blue q-ml-sm">Compras</q-item-label>
-          </q-item-section>
-        </q-item>
+    <!-- Usuarios -->
+    <q-item clickable to="/usuarios" class="item-highlight">
+      <q-item-section avatar>
+        <q-icon name="person" class="icon-highlight" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label class="q-ml-sm">Usuarios</q-item-label>
+      </q-item-section>
+    </q-item>
 
-        <!-- Ventas (Nuevo) -->
-        <q-item clickable to="/ventas">
-          <q-item-section avatar>
-            <q-icon name="sell" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="text-blue q-ml-sm">Ventas</q-item-label>
-          </q-item-section>
-        </q-item>
+    <!-- Compras -->
+    <q-item clickable to="/compras" class="item-highlight">
+      <q-item-section avatar>
+        <q-icon name="credit_card" class="icon-highlight" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label class="q-ml-sm">Compras</q-item-label>
+      </q-item-section>
+    </q-item>
 
-        <!-- Devoluciones de Entrada (Nuevo) -->
-        <q-item clickable to="/devoluciones-entrada">
-          <q-item-section avatar>
-            <q-icon name="undo" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="text-blue q-ml-sm">Devoluciones de Entrada</q-item-label>
-          </q-item-section>
-        </q-item>
+    <!-- Ventas -->
+    <q-item clickable to="/ventas" class="item-highlight">
+      <q-item-section avatar>
+        <q-icon name="sell" class="icon-highlight" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label class="q-ml-sm">Ventas</q-item-label>
+      </q-item-section>
+    </q-item>
 
-        <!-- Devoluciones de Salida (Nuevo) -->
-        <q-item clickable to="/devoluciones-salida">
-          <q-item-section avatar>
-            <q-icon name="arrow_back" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label class="text-blue q-ml-sm">Devoluciones de Salida</q-item-label>
-          </q-item-section>
-        </q-item>
+    <!-- Devoluciones de Entrada -->
+    <q-item clickable to="/devoluciones-entrada" class="item-highlight">
+      <q-item-section avatar>
+        <q-icon name="undo" class="icon-highlight" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label class="q-ml-sm">Devoluciones de Entrada</q-item-label>
+      </q-item-section>
+    </q-item>
 
-      </q-list>
-    </q-drawer>
+    <!-- Devoluciones de Salida -->
+    <q-item clickable to="/devoluciones-salida" class="item-highlight">
+      <q-item-section avatar>
+        <q-icon name="arrow_back" class="icon-highlight" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label class="q-ml-sm">Devoluciones de Salida</q-item-label>
+      </q-item-section>
+    </q-item>
+  </q-list>
+</q-drawer>
+
+
   
     <q-page-container>
       <router-view />
@@ -444,5 +465,58 @@ img {
   justify-content: center; /* Centra la tarjeta en su contenedor */
   align-items: center;
 }
+
+.header-enhanced {
+  background-color: white; /* Fondo claro */
+  border-bottom: 1px solid #ddd; /* Línea sutil */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.header-enhanced:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efecto al pasar el cursor */
+}
+
+.btn-highlight {
+  color: #b71c1c; /* Rojo oscuro */
+  transition: transform 0.2s ease;
+}
+
+.btn-highlight:hover {
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+.drawer-enhanced {
+  background-color: #f9f9f9; /* Fondo suave */
+  color: #333; /* Texto oscuro */
+}
+
+.logo-drawer {
+  width: 80px;
+  margin: 15px auto;
+  display: block;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+.item-highlight {
+  border-radius: 5px;
+  margin: 5px 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.item-highlight:hover {
+  background-color: #ffe0e0; /* Fondo rojo claro al pasar */
+  transform: translateX(5px); /* Movimiento sutil */
+}
+
+.icon-highlight {
+  color: #b71c1c;
+}
+
+.toolbar-title {
+  font-weight: bold;
+  color: #555; /* Color neutro para el título */
+}
+
 
 </style>

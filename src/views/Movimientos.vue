@@ -2,7 +2,7 @@
     <h1>Movimientos</h1>
     <div class="q-pa-md q-gutter-sm">
       <!-- Botón para agregar un nuevo movimiento -->
-      <q-btn color="primary" label="Agregar nuevo movimiento" no-caps @click="openModal" />
+      <q-btn color="red" label="Agregar nuevo movimiento" no-caps @click="openModal" />
   
       <!-- Modal para agregar movimiento -->
       <q-dialog v-model="modalAgregarMovimiento" persistent>
