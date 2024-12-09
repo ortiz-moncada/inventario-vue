@@ -2,7 +2,7 @@
   <h1>Usuarios</h1>
   <div class="q-pa-md q-gutter-sm">
     <q-btn color="primary" label="Agregar nuevo usuario" no-caps @click="openModal" />
-    
+
     <!-- Modal para agregar usuario -->
     <q-dialog v-model="modalAgregarUsuario" persistent>
       <q-card>
@@ -10,7 +10,7 @@
           <div class="text-h6">Agregar Nuevo Usuario</div>
           <q-input v-model="nuevoUsuario.nombre" label="Nombre" filled />
           <q-input v-model="nuevoUsuario.email" label="Email" filled />
-          <q-input v-model="nuevoUsuario.contraseña" label="Contraseña" filled type="password" />
+          <q-input v-model="nuevoUsuario.contraseña" label="Contraseña" />
           <q-input v-model="nuevoUsuario.rol" label="Rol" filled />
         </q-card-section>
 
@@ -39,8 +39,9 @@
   <div class="q-pa-md">
     <q-table title="Usuarios" :rows="rows" :columns="columns" row-key="name">
       <template v-slot:body-cell-opciones="props">
-        <q-td :props="props" style="text-align: center;">
-          <q-btn @click="editarUsuarios(props.row)">📝</q-btn>
+        <q-td :props="props" class="q-pa-sm flex justify-center">
+          <!-- Botón de editar usuario -->
+          <q-btn icon="edit" color="blue" round @click="editarUsuarios(props.row)" />
 
           <!-- Modal para editar usuarios -->
           <q-dialog v-model="modalEditarUsuario" persistent>
@@ -60,9 +61,10 @@
             </q-card>
           </q-dialog>
 
-          <!-- Botones con condición adecuada para cambiar estado -->
-          <q-btn v-if="props.row.estado === 'activo'" @click="cambiarEstado(props.row)">❌</q-btn>
-          <q-btn v-if="props.row.estado === 'inactivo'" @click="cambiarEstado(props.row)">✅</q-btn>
+          <!-- Botones para cambiar estado -->
+          <q-btn v-if="props.row.estado === 'activo'" icon="block" color="red" round @click="cambiarEstado(props.row)" />
+          <q-btn v-else-if="props.row.estado === 'inactivo'" icon="check_circle" color="green" round @click="cambiarEstado(props.row)" />
+          <q-btn v-else icon="help" color="grey" round disabled />
         </q-td>
       </template>
     </q-table>
@@ -139,7 +141,7 @@ async function postUsuario() {
   try {
     const res = await postData('/usuarios', nuevoUsuario.value);
     if (res) {
-      rows.value.push(res.usuario); // Agregar directamente a la lista
+      rows.value.push(res.usuario);
       cerrarFormulario();
     }
   } catch (error) {
@@ -170,7 +172,7 @@ async function confirmarCambioEstado() {
 }
 
 function editarUsuarios(usuario) {
-  usuarioSeleccionado.value = { ...usuario };  // Clonar el usuario para evitar mutaciones directas
+  usuarioSeleccionado.value = { ...usuario };
   modalEditarUsuario.value = true;
 }
 
@@ -202,6 +204,7 @@ onBeforeMount(() => {
   listarUsuarios();
 });
 </script>
+
 
   
   

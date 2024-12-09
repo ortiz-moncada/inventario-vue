@@ -11,12 +11,26 @@ import devolucionesE from '../views/devoluciones-e.vue'
 import devolucionesS from '../views/devoluciones-s.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import Clientes from '../views/Clientes.vue'
+import Provedores from '../views/provedores.vue'
+import Usuarios from '../views/usuarios.vue'
 
 const routes = [
     {
         path: '/',
         component: Login
     },
+
+    { path: "/clientes", component: Clientes, name: "clientes" },
+    { path: "/provedores", component: Provedores, name: "provedores" },
+    { path: "/movimientos", component: Movimientos, name: "movimientos" },
+    { path: "/articulos", component: Articulos, name: "articulos" },
+    { path: "/categorias", component: Categorias, name: "categorias" },
+    { path: "/usuarios", component: Usuarios, name: "usuarios" },
+    { path: "/compras", component: compras, name: "compras" },
+    { path: "/ventas", component: ventas, name: "ventas" },
+    { path: "/devoluciones-entrada", component: devolucionesE, name: "devoluciones-entrada" },
+    { path: "/devoluciones-salida", component: devolucionesS, name: "devoluciones-salida" },
+
    {
 
     path:"/home",
@@ -63,6 +77,7 @@ const routes = [
             component: devolucionesS
         },
     ]
+    
    },
    
 ]
