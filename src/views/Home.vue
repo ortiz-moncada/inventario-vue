@@ -154,7 +154,7 @@
               <div class="card-title">Clientes</div>
             </q-card-section>
             <q-card-actions align="right">
-              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'clientes' }" />
+              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'clientes1' }" />
             </q-card-actions>
           </q-card>
         </div>
@@ -191,7 +191,7 @@
               <div class="card-title">Movimientos</div>
             </q-card-section>
             <q-card-actions align="right">
-              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'movimientos' }" />
+              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'movimientos1' }" />
             </q-card-actions>
           </q-card>
         </div>
@@ -208,7 +208,7 @@
               <div class="card-title">Articulos</div>
             </q-card-section>
             <q-card-actions align="right">
-              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'articulos' }" />
+              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'articulos1' }" />
             </q-card-actions>
           </q-card>
         </div>
@@ -225,7 +225,7 @@
               <div class="card-title">Categorías</div>
             </q-card-section>
             <q-card-actions align="right">
-              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'categorias' }" />
+              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'categorias1' }" />
             </q-card-actions>
           </q-card>
         </div>
@@ -242,7 +242,7 @@
               <div class="card-title">Usuarios</div>
             </q-card-section>
             <q-card-actions align="right">
-              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'usuarios' }" />
+              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'usuarios1' }" />
             </q-card-actions>
           </q-card>
         </div>
@@ -259,7 +259,7 @@
               <div class="card-title">Compras</div>
             </q-card-section>
             <q-card-actions align="right">
-              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'compras' }" />
+              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'compras1' }" />
             </q-card-actions>
           </q-card>
         </div>
@@ -276,7 +276,7 @@
               <div class="card-title">Ventas</div>
             </q-card-section>
             <q-card-actions align="right">
-              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'ventas' }" />
+              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'ventas1' }" />
             </q-card-actions>
           </q-card>
         </div>
@@ -293,7 +293,7 @@
               <div class="card-title">Devoluciones-entrada</div>
             </q-card-section>
             <q-card-actions align="right">
-              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'devoluciones-entrada' }" />
+              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'devoluciones-entrada1' }" />
             </q-card-actions>
           </q-card>
         </div>
@@ -310,7 +310,7 @@
               <div class="card-title">Devoluciones-salida</div>
             </q-card-section>
             <q-card-actions align="right">
-              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'devoluciones-salida' }" />
+              <q-btn class="custom-btn" label="Ver más" :to="{ name: 'devoluciones-salida1' }" />
             </q-card-actions>
           </q-card>
         </div>
@@ -339,11 +339,11 @@ function toggleLeftDrawer() {
   left: 0; /* Alinea el header con el borde izquierdo */
   width: 100%; /* Asegura que el header ocupe todo el ancho */
   z-index: 1000; /* Eleva el header por encima de otros elementos */
-  background-color: white; /* Color de fondo para que sea visible */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Añade una sombra elegante */
+  background-color: blue; 
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
 }
 .main-content {
-  margin-top: 56px; /* Ajusta según la altura de tu header */
+  margin-top: 56px; 
 }
 
 
@@ -351,7 +351,7 @@ function toggleLeftDrawer() {
   padding: 0%;
 }
 #header-main {
-  background-color: blue;
+  background-color: red;
   color: white;
 }
 
@@ -371,7 +371,7 @@ img {
 .title {
   font-family: 'Georgia', serif;
   font-weight: bold;
-  color: blue;
+  color: red;
 }
 
 /* Estilo de las tarjetas */
@@ -381,8 +381,8 @@ img {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
-  background-color: black;
-  color: gold;
+  background-color: red;
+  color: white;
   border: solid 2px black;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para hover */
 }
@@ -407,7 +407,7 @@ img {
 .presentation-card:hover {
   transform: translateY(-10px); /* Eleva la tarjeta */
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
-  border-color: gold; /* Cambia el color del borde al pasar el mouse */
+  border-color: blue; /* Cambia el color del borde al pasar el mouse */
 }
 
 .presentation-card:hover .card-image {
@@ -416,14 +416,14 @@ img {
 
 /* Estilo de los botones */
 .custom-btn {
-  background-color: black; 
-  color: gold; 
+  background-color: white; 
+  color: black; 
   transition: background-color 0.3s ease, transform 0.3s ease; 
   align-items: center;
 }
 
 .custom-btn:hover {
-  background-color: gold; 
+  background-color: orange; 
   color: black; 
   transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
 }

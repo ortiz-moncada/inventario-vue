@@ -33,6 +33,8 @@
             <q-btn @click="editarMovimiento(props.row)">📝</q-btn>
             <q-btn v-if="props.row.estado === 'aprobado'" @click="cambiarEstado(props.row)">❌</q-btn>
             <q-btn v-if="props.row.estado === 'anulado'" @click="cambiarEstado(props.row)">✅</q-btn>
+            <q-btn>👁️</q-btn>
+
           </q-td>
         </template>
       </q-table>

@@ -20,16 +20,16 @@ const routes = [
         component: Login
     },
 
-    { path: "/clientes", component: Clientes, name: "clientes" },
+    { path: "/clientes1", component: Clientes, name: "clientes1" },
     { path: "/provedores", component: Provedores, name: "provedores" },
-    { path: "/movimientos", component: Movimientos, name: "movimientos" },
-    { path: "/articulos", component: Articulos, name: "articulos" },
-    { path: "/categorias", component: Categorias, name: "categorias" },
-    { path: "/usuarios", component: Usuarios, name: "usuarios" },
-    { path: "/compras", component: compras, name: "compras" },
-    { path: "/ventas", component: ventas, name: "ventas" },
-    { path: "/devoluciones-entrada", component: devolucionesE, name: "devoluciones-entrada" },
-    { path: "/devoluciones-salida", component: devolucionesS, name: "devoluciones-salida" },
+    { path: "/movimientos1", component: Movimientos, name: "movimientos1" },
+    { path: "/articulos1", component: Articulos, name: "articulos1" },
+    { path: "/categorias1", component: Categorias, name: "categorias1" },
+    { path: "/usuarios1", component: Usuarios, name: "usuarios1" },
+    { path: "/compras1", component: compras, name: "compras1" },
+    { path: "/ventas1", component: ventas, name: "ventas1" },
+    { path: "/devoluciones-entrada1", component: devolucionesE, name: "devoluciones-entrada1" },
+    { path: "/devoluciones-salida1", component: devolucionesS, name: "devoluciones-salida1" },
 
    {
 
